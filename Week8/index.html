@@ -1,33 +1,41 @@
 <html>
-<title>Forms</title>
+    <title>
+    Horror games
+    </title>
+    <head><link rel="stylesheet" type="text/css" href="./styles/bootstrap-5.3.3-dist/css/bootstrap.css"></head><br>
+    <header>Horror Games</header>
+    <div class="p-3 mb-2 bg-dark text-white">
+    <body>
 
-<head>
-  <script>
-    function getData() {
-      var name = document.getElementById("txtName").value;
-      var phone = document.getElementById("txtPhone").value;
+<text>
+    <style>
+        body{
+            background-color: black;
+            background-image: url("scaryBG.png.crdownload");
+        }
+        header{
+            background-color: black;
+            -webkit-text-fill-color: aliceblue;
+        }
+    </style>
+Horror games are fun, here are some cool horror games.
 
-      window.alert("name: "+name+" phone"+phone);
-    }
-  </script>
-</head>
+<ul>
+<li>Five Nights at Freddy's</li>
+<li>In Sound Mind</li>
+<li>Mouthwashing</li>
+<li>Bendy and the Ink Machine</li>
+</ul>
+</text>
+</div>
+<a href="page1.html">Types of horror game</a>
+<br>
+<a href="page2.html">Do you like horror games?</a>
+<br>
+<a href="page3.html">How horror games have influenced me</a>
+<br>
+<a href="page4.html">Why horror games exist</a>
 
-<body>
-  <!-- add another field -->
-  <table>
-    <tr>
-      <td>Name</td>
-      <td><input type="text" id="txtName"></td>
-    </tr>
-    <tr>
-      <td>Phone Number</td>
-      <td><input type="text" id="txtPhone"></td>
-    </tr>
-    <tr>
-      <td colspan="2"><button id="btnSubmit" onClick="getData();">Submit</button></td>
-    </tr>
-  </table>
-  <div id="finalResult"></div>
-</body>
+    </body>
 
 </html>
