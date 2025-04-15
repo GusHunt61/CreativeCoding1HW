@@ -4,6 +4,7 @@ var altx = 200;
 var alty = 100;
 var diameter = 25;
 var randomVal;
+var randomVal2;
 var mousex = 0;
 var mousey = 0;
 
