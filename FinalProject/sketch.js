@@ -5,8 +5,6 @@ var sphereSize = 50;
 var sphereLoc = 0;
 let customFont;
 var sphereColor = 255;
-
-sound.play();
 function preload() {
   customFont = loadFont("october-crow.regular.ttf");
 
@@ -19,8 +17,7 @@ function preload() {
 function setup() {
   createCanvas(960, 540, WEBGL);
   imageMode(CENTER);
-  song.setLoop(true);
-  song.play();
+  playingMusic();
 }
 
 function draw() {
@@ -100,4 +97,8 @@ function rotateWithFrameCount() {
   rotateY(frameCount / 100);
   rotateX(frameCount / 100);
   rotateZ(frameCount / 100);
+}
+function playingMusic(){
+  song.setLoop(true);
+  song.play();
 }
