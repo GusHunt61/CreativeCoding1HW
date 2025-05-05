@@ -31,6 +31,7 @@ function draw() {
   image(dark, 0, 0, 960, 540);
   isNearDoll();
   windowLook();
+  sphere(50);
 }
 
 function handleMovement() {
