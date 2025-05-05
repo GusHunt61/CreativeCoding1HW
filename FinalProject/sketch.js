@@ -18,6 +18,7 @@ function preload() {
 function setup() {
   createCanvas(960, 540, WEBGL);
   imageMode(CENTER);
+  song.setLoop(true);
 }
 
 function draw() {
@@ -98,8 +99,7 @@ function rotateWithFrameCount() {
   rotateX(frameCount / 100);
   rotateZ(frameCount / 100);
 }
-function mouseClicked(){
-  song.setLoop(true);
+function mouseClicked() {
   song.play();
 }
 
