@@ -20,10 +20,10 @@ function setup() {
   createCanvas(960, 540, WEBGL);
   imageMode(CENTER);
   song.setLoop(true);
+  song.play();
 }
 
 function draw() {
-  song.play();
   handleMovement();
   tint(255, 255);
   background(220);
