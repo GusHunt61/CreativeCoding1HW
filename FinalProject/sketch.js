@@ -5,12 +5,6 @@ var sphereSize = 50;
 var sphereLoc = 0;
 let customFont;
 var sphereColor = 255;
-var sound = new Howl({
-  src: ['radiohead.mp3'],
-  autoplay: true,
-  loop: true,
-  volume: 0.5,
-});
 
 sound.play();
 function preload() {
@@ -19,17 +13,17 @@ function preload() {
   bg = loadImage("brightbg.png");
   dark = loadImage("shadow.png");
   spritesheet = loadImage("DecemberSprite.png");
-  //song = loadSound("radiohead.mp3");
-  let direction1 = 0;
+  song = loadSound("radiohead.mp3");
   windowImg = loadImage("New Piskel-1.png.png");
 }
 function setup() {
   createCanvas(960, 540, WEBGL);
   imageMode(CENTER);
- 
+  song.setLoop(true);
 }
 
 function draw() {
+  song.play();
   handleMovement();
   tint(255, 255);
   background(220);
