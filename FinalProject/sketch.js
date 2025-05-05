@@ -5,20 +5,28 @@ var sphereSize = 50;
 var sphereLoc = 0;
 let customFont;
 var sphereColor = 255;
+var sound = new Howl({
+  src: ['radiohead.mp3'],
+  autoplay: true,
+  loop: true,
+  volume: 0.5,
+});
+
+sound.play();
 function preload() {
   customFont = loadFont("october-crow.regular.ttf");
 
   bg = loadImage("brightbg.png");
   dark = loadImage("shadow.png");
   spritesheet = loadImage("DecemberSprite.png");
-  song = loadSound("radiohead.mp3");
+  //song = loadSound("radiohead.mp3");
   let direction1 = 0;
   windowImg = loadImage("New Piskel-1.png.png");
 }
 function setup() {
   createCanvas(960, 540, WEBGL);
   imageMode(CENTER);
-  song.setLoop(true);
+ 
 }
 
 function draw() {
@@ -99,7 +107,3 @@ function rotateWithFrameCount() {
   rotateX(frameCount / 100);
   rotateZ(frameCount / 100);
 }
-function mouseClicked() {
-  song.play();
-}
-
