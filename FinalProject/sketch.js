@@ -17,10 +17,10 @@ function preload() {
 function setup() {
   createCanvas(960, 540, WEBGL);
   imageMode(CENTER);
+  playingMusic();
 }
 
 function draw() {
-  playingMusic();
   handleMovement();
   tint(255, 255);
   background(220);
