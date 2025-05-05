@@ -1,0 +1,95 @@
+var x1 = 0;
+var y1 = 0;
+var speed = 5;
+var sphereSize = 50;
+var sphereLoc = 0;
+let customFont;
+function preload() {
+  customFont = loadFont("october-crow.regular.ttf");
+
+  bg = loadImage("brightbg.png");
+  dark = loadImage("shadow.png");
+  spritesheet = loadImage("DecemberSprite.png");
+  song = loadSound("radiohead.mp3");
+  let direction1 = 0;
+  windowImg = loadImage("New Piskel-1.png.png");
+}
+function setup() {
+  createCanvas(960, 540, WEBGL);
+  imageMode(CENTER);
+}
+
+function draw() {
+  handleMovement();
+  tint(255, 255);
+  background(220);
+  image(bg, 0, 0, 960, 540);
+  tint(225, 225);
+  image(spritesheet, x1, y1, 200, 200);
+  tint(255, 210);
+  image(dark, 0, 0, 960, 540);
+  isNearDoll();
+  windowLook();
+}
+
+function handleMovement() {
+  let moving = false;
+  // parameters for x movement
+  if (x1 >= 400) {
+    speed = 0;
+    x1 = 399;
+  } else {
+    speed = 5;
+  }
+  if (x1 <= -400) {
+    speed = 0;
+    x1 = -399;
+  } else {
+    speed = 5;
+  }
+  // parameters for y movement
+  if (y1 >= 200) {
+    speed = 0;
+    y1 = 199;
+  } else {
+    speed = 5;
+  }
+  if (y1 <= -200) {
+    speed = 0;
+    y1 = -199;
+  } else {
+    speed = 5;
+  }
+
+  if (keyIsDown(DOWN_ARROW)) {
+    y1 += speed;
+  } else if (keyIsDown(LEFT_ARROW)) {
+    x1 -= speed;
+  } else if (keyIsDown(RIGHT_ARROW)) {
+    x1 += speed;
+  } else if (keyIsDown(UP_ARROW)) {
+    y1 -= speed;
+  }
+}
+function isNearDoll() {
+  if (x1 <= -100 && y1 <= -100) {
+    fill(255);
+    textSize(25);
+    textFont(customFont);
+    text("It's my stuffed rabbit, I have had it since I was small.", -350, 200);
+  }
+}
+function windowLook() {
+  if (x1 >= -100 && y1 <= -100) {
+    tint(255,300);
+    image(windowImg, 0, 0, 960, 540);
+          textFont(customFont);
+    color(0);
+    text("I remember when this place was a metropolis... now it is a wasteland.", -350, 200);
+    rotateWithFrameCount();
+    sphere(sphereSize);
+  }
+}
+function rotateWithFrameCount() {
+  rotateY(frameCount/100);
+}
