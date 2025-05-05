@@ -4,6 +4,7 @@ var speed = 5;
 var sphereSize = 50;
 var sphereLoc = 0;
 let customFont;
+var sphereColor = 255;
 function preload() {
   customFont = loadFont("october-crow.regular.ttf");
 
@@ -17,6 +18,9 @@ function preload() {
 function setup() {
   createCanvas(960, 540, WEBGL);
   imageMode(CENTER);
+  
+  song.setLoop(true);
+  song.play();
 }
 
 function draw() {
@@ -80,16 +84,21 @@ function isNearDoll() {
   }
 }
 function windowLook() {
-  if (x1 >= -100 && y1 <= -100) {
-    tint(255,300);
+  if (x1 >= 100 && y1 <= -100) {
+    tint(255, 300);
     image(windowImg, 0, 0, 960, 540);
-          textFont(customFont);
-    color(0);
-    text("I remember when this place was a metropolis... now it is a wasteland.", -350, 200);
+    textFont(customFont);
+    textSize(75);
+    text("It's spherey, the sphere!!!", -350, 200);
+
     rotateWithFrameCount();
+    color(sphereColor);
     sphere(sphereSize);
   }
 }
 function rotateWithFrameCount() {
-  rotateY(frameCount/100);
+  rotateY(frameCount / 100);
+  rotateX(frameCount / 100);
+  rotateZ(frameCount / 100);
 }
+
