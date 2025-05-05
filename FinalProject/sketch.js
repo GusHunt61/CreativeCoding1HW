@@ -98,7 +98,7 @@ function rotateWithFrameCount() {
   rotateX(frameCount / 100);
   rotateZ(frameCount / 100);
 }
-function OnClick(){
+function mouseClicked(){
   song.setLoop(true);
   song.play();
 }
