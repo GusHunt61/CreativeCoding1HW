@@ -101,4 +101,5 @@ function rotateWithFrameCount() {
 function playingMusic(){
   song.setLoop(true);
   song.play();
+  song.setVolume(1.0);
 }
