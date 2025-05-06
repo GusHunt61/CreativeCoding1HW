@@ -17,7 +17,6 @@ function preload() {
 function setup() {
   createCanvas(960, 540, WEBGL);
   imageMode(CENTER);
-  playingMusic();
 }
 
 function draw() {
@@ -102,4 +101,7 @@ function playingMusic(){
   song.setLoop(true);
   song.play();
   song.setVolume(1.0);
+}
+function mousePressed(){
+  playingMusic();
 }
