@@ -3,6 +3,7 @@ var y1 = 0;
 var speed = 5;
 var sphereSize = 50;
 var sphereLoc = 0;
+var isPlaying = false;
 let customFont;
 var sphereColor = 255;
 function preload() {
@@ -102,6 +103,9 @@ function playingMusic(){
   song.play();
   song.setVolume(1.0);
 }
-function mousePressed(){
-  playingMusic();
+function mousePressed() {
+  if (isPlaying == false) {
+    playingMusic();
+    isPlaying = true;
+  }
 }
