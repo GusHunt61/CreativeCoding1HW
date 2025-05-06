@@ -77,7 +77,7 @@ function isNearDoll() {
     fill(255);
     textSize(25);
     textFont(customFont);
-    text("It's my stuffed rabbit, I have had it since I was very small.", -350, 200);
+    text("It's my stuffed rabbit, I have had it since I was small.", -350, 200);
   }
 }
 function windowLook() {
